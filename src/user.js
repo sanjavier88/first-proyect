@@ -1,6 +1,11 @@
 import { useState } from "react";
+import styled from "styled-components";
 
-function User({ name, avatar, counter }) {
+const Avatar = styled.img`
+  border: 10px solid black;
+`;
+
+function User({ color, name, avatar, counter }) {
   const [calculatedName, setCalculatedName] = useState(name);
 
   const newName = `${calculatedName} es muy fuerte`;
@@ -12,7 +17,7 @@ function User({ name, avatar, counter }) {
   }
   return (
     <div className="User" onClick={onClick}>
-      <img src={avatar} title={name} alt="" />
+      <Avatar src={avatar} title={name} alt="" />
       <p>
         hemos dado click en {newName} por {counter} veces
       </p>
